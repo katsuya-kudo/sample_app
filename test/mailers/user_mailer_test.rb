@@ -11,7 +11,7 @@ class UserMailerTest < ActionMailer::TestCase
     #注: 本番環境でメール送信を行う場合は、
     #user@realdomain.comを自分が使っている
     #メールアドレスに変更してください。
-    assert_equal ["user@realdomain.com"], mail.from
+    assert_equal ["user@realdomain.com"], mail.from  
     assert_match user.name,               mail.body.encoded
     assert_match user.activation_token,   mail.body.encoded
     assert_match CGI.escape(user.email),  mail.body.encoded
